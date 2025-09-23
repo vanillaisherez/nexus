@@ -1,19 +1,22 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title></title>
+    <meta charset="UTF-8">
+    <title>Nexus</title>
 </head>
-<body></body>
+<body>
 <script>
-if(location.pathname==='/loader'){
-  fetch('/loader.lua').then(r=>r.text()).then(t=>{
-    document.open();
-    document.write(t);
-    document.close();
-  }).catch(()=>{document.body.textContent='';});
-}else{
-  document.body.textContent='';
-}
+(async () => {
+    try {
+        const response = await fetch('./loader.lua');
+        if (!response.ok) throw new Error(`Could not load loader.lua: ${response.status}`);
+        const text = await response.text();
+        document.body.textContent = text;
+    } catch (err) {
+        document.body.textContent = err.message;
+        console.error(err);
+    }
+})();
 </script>
+</body>
 </html>
