@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body></body>
+<script>
+if(location.pathname==='/loader'){
+  fetch('/loader.lua').then(r=>r.text()).then(t=>{
+    document.open();
+    document.write(t);
+    document.close();
+  }).catch(()=>{document.body.textContent='';});
+}else{
+  document.body.textContent='';
+}
+</script>
+</html>
