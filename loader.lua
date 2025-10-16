@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/449378250b9cb5ca"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Nexusowner/Nexus-developed-loader/refs/heads/main/loader"))()
